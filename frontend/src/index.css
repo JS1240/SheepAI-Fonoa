@@ -1,0 +1,376 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  font-family: 'Inter', sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+}
+
+.font-mono {
+  font-family: 'JetBrains Mono', monospace;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #1E3A5F;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #475569;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #64748b;
+}
+
+/* Glowing effect for important elements */
+.glow-border {
+  box-shadow: 0 0 15px rgba(0, 194, 184, 0.3);
+}
+
+/* Timeline styling */
+.timeline-line {
+  background: linear-gradient(180deg, #00C2B8 0%, #00C2B8 50%, transparent 100%);
+}
+
+/* Graph container */
+.graph-container {
+  background: radial-gradient(ellipse at center, #1E3A5F 0%, #0A1628 100%);
+}
+
+/* Prediction confidence bar */
+.confidence-bar {
+  background: linear-gradient(90deg, #22c55e 0%, #eab308 50%, #ef4444 100%);
+}
+
+/* Typing animation */
+@keyframes blink {
+  0%, 50% { opacity: 1; }
+  51%, 100% { opacity: 0; }
+}
+
+.typing-cursor::after {
+  content: '|';
+  animation: blink 1s infinite;
+  color: #00C2B8;
+}
+
+/* Card hover effect */
+.card-hover {
+  transition: all 0.3s ease;
+}
+
+.card-hover:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+}
+
+/* Fade in animation */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.3s ease-out forwards;
+}
+
+/* Slide up animation */
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-slide-up {
+  animation: slideUp 0.4s ease-out forwards;
+}
+
+/* Stagger animation delays */
+.stagger-1 { animation-delay: 0.1s; }
+.stagger-2 { animation-delay: 0.2s; }
+.stagger-3 { animation-delay: 0.3s; }
+.stagger-4 { animation-delay: 0.4s; }
+
+/* Scale in animation for numbers */
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.animate-scale-in {
+  animation: scaleIn 0.5s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+}
+
+/* Glow pulse for active elements */
+@keyframes glowPulse {
+  0%, 100% { box-shadow: 0 0 15px rgba(0, 194, 184, 0.3); }
+  50% { box-shadow: 0 0 25px rgba(0, 194, 184, 0.5); }
+}
+
+.animate-glow-pulse {
+  animation: glowPulse 2s ease-in-out infinite;
+}
+
+/* Progress bar fill animation */
+@keyframes fillBar {
+  from { width: 0%; }
+}
+
+.animate-fill-bar {
+  animation: fillBar 1s ease-out forwards;
+}
+
+/* Tab content transition */
+.tab-content {
+  animation: fadeIn 0.2s ease-out;
+}
+
+/* Message entrance */
+@keyframes messageSlide {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-message {
+  animation: messageSlide 0.3s ease-out forwards;
+}
+
+/* Suggestion pill animation */
+@keyframes pillPop {
+  0% {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  70% {
+    transform: scale(1.02);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.animate-pill {
+  animation: pillPop 0.3s ease-out forwards;
+}
+
+/* New feed item highlight */
+@keyframes feedHighlight {
+  0% {
+    background-color: rgba(0, 194, 184, 0.2);
+    border-left-color: #00C2B8;
+  }
+  100% {
+    background-color: transparent;
+  }
+}
+
+.animate-feed-new {
+  animation: feedHighlight 3s ease-out forwards;
+}
+
+/* Dashboard stat counter */
+@keyframes countUp {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-count {
+  animation: countUp 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+}
+
+/* Shimmer loading effect */
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+.animate-shimmer {
+  background: linear-gradient(90deg, #1E3A5F 25%, #2A4A6F 50%, #1E3A5F 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+}
+
+/* Command palette backdrop */
+@keyframes backdropFade {
+  from {
+    opacity: 0;
+    backdrop-filter: blur(0);
+  }
+  to {
+    opacity: 1;
+    backdrop-filter: blur(4px);
+  }
+}
+
+.animate-backdrop {
+  animation: backdropFade 0.2s ease-out forwards;
+}
+
+/* Graph node pulse */
+@keyframes nodePulse {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.1);
+    opacity: 0.8;
+  }
+}
+
+.animate-node-pulse {
+  animation: nodePulse 2s ease-in-out infinite;
+}
+
+
+
+@layer base {
+  :root {
+    /* Fonoa Light Theme */
+    --background: 0 0% 100%;
+    --foreground: 213 56% 10%;
+    --card: 0 0% 100%;
+    --card-foreground: 213 56% 10%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 213 56% 10%;
+    --primary: 175 100% 38%;
+    --primary-foreground: 213 56% 10%;
+    --secondary: 210 17% 98%;
+    --secondary-foreground: 213 56% 10%;
+    --muted: 210 17% 98%;
+    --muted-foreground: 220 9% 46%;
+    --accent: 175 89% 94%;
+    --accent-foreground: 213 56% 10%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 220 13% 91%;
+    --input: 220 13% 91%;
+    --ring: 175 100% 38%;
+    --chart-1: 175 100% 38%;
+    --chart-2: 212 48% 24%;
+    --chart-3: 220 9% 46%;
+    --chart-4: 43 74% 66%;
+    --chart-5: 27 87% 67%;
+    --radius: 0.5rem;
+  }
+  .dark {
+    /* Fonoa Dark Theme */
+    --background: 213 56% 10%;
+    --foreground: 0 0% 100%;
+    --card: 212 48% 24%;
+    --card-foreground: 0 0% 100%;
+    --popover: 212 48% 24%;
+    --popover-foreground: 0 0% 100%;
+    --primary: 175 100% 38%;
+    --primary-foreground: 213 56% 10%;
+    --secondary: 212 48% 24%;
+    --secondary-foreground: 0 0% 100%;
+    --muted: 212 48% 24%;
+    --muted-foreground: 218 11% 65%;
+    --accent: 175 100% 38%;
+    --accent-foreground: 213 56% 10%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 212 48% 30%;
+    --input: 212 48% 30%;
+    --ring: 175 100% 38%;
+    --chart-1: 175 100% 38%;
+    --chart-2: 175 89% 94%;
+    --chart-3: 30 80% 55%;
+    --chart-4: 280 65% 60%;
+    --chart-5: 340 75% 55%;
+  }
+}
+
+
+
+@layer base {
+  * {
+    border-color: hsl(var(--border));
+  }
+  body {
+    background-color: hsl(var(--background));
+    color: hsl(var(--foreground));
+  }
+}
+
+/* Fonoa Button Variants */
+@layer components {
+  .btn-fonoa-primary {
+    background-color: hsl(var(--primary));
+    color: hsl(var(--primary-foreground));
+    padding: 0.75rem 1.5rem;
+    border-radius: 9999px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+  }
+
+  .btn-fonoa-primary:hover {
+    opacity: 0.9;
+    transform: translateY(-1px);
+  }
+
+  .btn-fonoa-secondary {
+    background-color: transparent;
+    border: 1px solid hsl(var(--border));
+    color: hsl(var(--foreground));
+    padding: 0.75rem 1.5rem;
+    border-radius: 9999px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+  }
+
+  .btn-fonoa-secondary:hover {
+    background-color: hsl(var(--muted));
+    border-color: hsl(var(--primary));
+    color: hsl(var(--primary));
+  }
+}
