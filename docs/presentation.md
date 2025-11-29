@@ -191,29 +191,36 @@ HOW IT WORKS
 +-----------+          +----------------+          +---------------+
 | The Hacker|   -->    | AI Processing  |   -->    | Conversational|
 | News RSS  |          | GPT-4 Analysis |          | Interface     |
-|           |          | Knowledge Graph|          | Timeline View |
-| Real-time |          | Predictions    |          | Graph Viz     |
-| Ingestion |          |                |          |               |
+| BrightData|          | Knowledge Graph|          | Timeline View |
+| Scraping  |          | Predictions    |          | Graph Viz     |
+|           |          | Gemini Imagen  |          | Infographics  |
 +-----------+          +----------------+          +---------------+
+     |                        |                           |
+     v                        v                           v
+[Supabase]            [OpenAI + Gemini]            [React + Vite]
 
-Tech Stack:
-[Python] [FastAPI] [OpenAI] [NetworkX] [React]
+COMPLETE TECH STACK:
+Data:      [BrightData] [Supabase/pgvector] [RSS]
+AI/ML:     [GPT-4] [OpenAI Embeddings] [Gemini NanoBanana]
+Backend:   [Python 3.13] [FastAPI] [NetworkX] [Pydantic]
+Frontend:  [React 18] [TypeScript] [TailwindCSS] [vis-network]
+Alerts:    [Telegram Bot] [Resend Email]
 ```
 
 **Speaker Notes** (30 seconds):
 > "Here's how it works:
 >
-> Data Layer: Real-time RSS ingestion from The Hacker News
+> Data Layer: Real-time RSS plus BrightData Web Unlocker for full article scraping, stored in Supabase with pgvector
 >
-> Intelligence Layer: GPT-4 for understanding, embeddings for similarity, NetworkX for knowledge graphs
+> Intelligence Layer: GPT-4 for analysis, embeddings for similarity, NetworkX for graphs, Google Gemini for infographics
 >
-> Presentation Layer: Clean conversational interface with timeline and graph visualizations
+> Presentation Layer: React with TypeScript, vis-network for graph visualization, real-time alerts via Telegram
 >
 > Now let me show you this in action."
 
 **Design Elements**:
 - Three distinct blocks with clear flow
-- Technology logos at bottom
+- Complete technology logos at bottom organized by layer
 - Keep it simple - this is background, not the star
 
 ---
@@ -526,35 +533,44 @@ RECOMMENDED DEFENSES:
 **Visual Design**:
 - Clean technology stack visualization
 - Logos of technologies used
-- Simple architecture reminder
+- Organized by layer/function
 
 **Content**:
 ```
-BUILT WITH
+BUILT WITH ENTERPRISE-GRADE TECHNOLOGY
 
-[GPT-4 Logo]     [Python Logo]    [FastAPI Logo]
-Deep Semantic    Backend          API Layer
-Understanding    Processing
+AI & INTELLIGENCE:
+[GPT-4 Logo]         [OpenAI Embeddings]    [Gemini NanoBanana]
+Deep Semantic        Vector Similarity      AI-Generated
+Understanding        & Clustering           Infographics
 
-[NetworkX Logo]  [OpenAI Logo]    [React Logo]
-Knowledge        Embeddings &     Modern
-Graph            Similarity       Frontend
+DATA & INFRASTRUCTURE:
+[BrightData Logo]    [Supabase Logo]        [Python 3.13]
+Web Unlocker         PostgreSQL +           FastAPI +
+Scraping             pgvector               Pydantic
 
-Real-time data from The Hacker News RSS feed
+FRONTEND & VISUALIZATION:
+[React 18 Logo]      [vis-network]          [TailwindCSS]
+TypeScript +         Knowledge Graph        Modern UI
+Vite                 Visualization          Framework
+
+NOTIFICATIONS:
+[Telegram Logo]      [Resend Logo]
+Real-time Bot        Email Alerts
+Alerts
 ```
 
 **Speaker Notes** (30 seconds):
-> "How do we do this?
-> - GPT-4 for deep semantic understanding and prediction generation
-> - Knowledge Graph with NetworkX for relationship mapping
-> - Embedding-based similarity for story clustering
-> - Real-time RSS ingestion from The Hacker News
-> - Clean React frontend with visualization libraries"
+> "Enterprise-grade technology stack:
+> - GPT-4 for understanding, OpenAI embeddings for similarity, Gemini NanoBanana for infographics
+> - BrightData Web Unlocker for reliable scraping, Supabase with pgvector for storage
+> - React 18 with TypeScript, vis-network for graph visualization
+> - Real-time alerts via Telegram bot and Resend email"
 
 **Design Elements**:
-- Technology logos in grid
+- Technology logos organized by function
 - Brief description under each
-- Professional, credible feel
+- Professional, enterprise-ready feel
 
 ---
 
@@ -608,8 +624,9 @@ POSTURE: From reactive to predictive
 ```
 SOLUTION COMPLETENESS
 
-COMPLETED (MVP):
+COMPLETED (MVP) - 12 FEATURES:
 [x] Real-time RSS ingestion from The Hacker News
+[x] BrightData Web Unlocker for full article scraping
 [x] AI-powered article summarization and entity extraction
 [x] Knowledge graph construction and visualization
 [x] Story evolution timeline tracking
@@ -619,19 +636,26 @@ COMPLETED (MVP):
 [x] "Explain It To..." audience translation (CEO/Board/Developers)
 [x] 48-Hour Threat Forecast visualization
 [x] Threat DNA Matching with historical patterns
+[x] AI Infographic Generation (Gemini NanoBanana)
+
+INFRASTRUCTURE IMPLEMENTED:
+[x] Supabase database with pgvector embeddings
+[x] Telegram Bot for real-time alerts
+[x] Resend Email integration
 
 ARCHITECTURE READY FOR:
-[ ] Multi-source ingestion (BrightData, CVE databases)
+[ ] CVE database integration (NVD API)
 [ ] Team collaboration features
 [ ] API integration for SIEM/SOAR
-[ ] Alert system with thresholds
+[ ] Custom alert threshold configuration
 ```
 
 **Speaker Notes** (25 seconds):
-> "Our MVP is complete with TEN core features working:
-> - Data ingestion, intelligence processing, and presentation layer
-> - Plus three advanced features: audience translation, 48-hour forecasts, and Threat DNA matching
-> - The architecture is designed to scale with additional data sources and enterprise features."
+> "Our MVP is complete with TWELVE core features:
+> - Full data pipeline with BrightData scraping and Supabase storage
+> - AI intelligence with GPT-4 analysis and Gemini infographic generation
+> - Advanced features: audience translation, 48-hour forecasts, Threat DNA matching
+> - Real-time alerts via Telegram and email"
 
 ---
 
@@ -688,16 +712,43 @@ Fonoa Hackathon 2025
 ```
 SYSTEM ARCHITECTURE (DETAILED)
 
-+-------------------+     +----------------------+     +--------------------+
-|   DATA INGESTION  | --> |  INTELLIGENCE LAYER  | --> |  PRESENTATION     |
-+-------------------+     +----------------------+     +--------------------+
-| - RSS Feed Parser |     | - Article Processing |     | - Chat Interface  |
-| - Article Storage |     | - Embedding Generation|     | - Timeline View   |
-|                   |     | - Knowledge Graph    |     | - Graph Viz       |
-+-------------------+     | - Prediction Engine  |     | - Predictions     |
-                          +----------------------+     +--------------------+
++------------------------+     +------------------------+     +------------------------+
+|    DATA INGESTION      | --> |   INTELLIGENCE LAYER   | --> |   PRESENTATION LAYER   |
++------------------------+     +------------------------+     +------------------------+
+| - RSS Feed Parser      |     | - GPT-4 Analysis       |     | - React 18 + TypeScript|
+| - BrightData Scraper   |     | - OpenAI Embeddings    |     | - Chat Interface       |
+| - Supabase Storage     |     | - NetworkX Graphs      |     | - Timeline (Recharts)  |
+| - pgvector Embeddings  |     | - Prediction Engine    |     | - Graph (vis-network)  |
+|                        |     | - Gemini Infographics  |     | - Infographic Display  |
++------------------------+     +------------------------+     +------------------------+
+         |                              |                              |
+         v                              v                              v
++------------------------+     +------------------------+     +------------------------+
+|   EXTERNAL SERVICES    |     |      AI MODELS         |     |    NOTIFICATIONS       |
++------------------------+     +------------------------+     +------------------------+
+| - BrightData Web       |     | - gpt-4 (analysis)     |     | - Telegram Bot API     |
+|   Unlocker API         |     | - text-embedding-3     |     | - Resend Email API     |
+| - The Hacker News RSS  |     | - gemini-nano-banana   |     | - Real-time Alerts     |
+| - Supabase Postgres    |     |   (infographics)       |     |                        |
++------------------------+     +------------------------+     +------------------------+
 
-Database: In-memory (MVP) / PostgreSQL + pgvector (Production)
+BACKEND STACK:
+- Python 3.13 with FastAPI + Uvicorn
+- Pydantic for data validation
+- NetworkX for graph operations
+- httpx/aiohttp for async HTTP
+- BeautifulSoup4 + lxml for HTML parsing
+
+FRONTEND STACK:
+- React 18 with TypeScript
+- Vite for build tooling
+- TailwindCSS for styling
+- Radix UI for accessible components
+- Recharts for timeline visualization
+- vis-network for knowledge graph
+
+DATABASE:
+- Supabase (PostgreSQL + pgvector for embeddings)
 ```
 
 ### APPENDIX B: Data Sources
@@ -706,16 +757,38 @@ Database: In-memory (MVP) / PostgreSQL + pgvector (Production)
 ```
 DATA SOURCES
 
-PRIMARY SOURCE:
-- The Hacker News RSS Feed
-- URL: feeds.feedburner.com/TheHackersNews
-- Frequency: 15-minute polling
+PRIMARY SOURCES (IMPLEMENTED):
+
+1. THE HACKER NEWS RSS FEED
+   - URL: feeds.feedburner.com/TheHackersNews
+   - Frequency: 15-minute polling
+   - Data: Headlines, summaries, publication dates
+
+2. BRIGHTDATA WEB UNLOCKER (IMPLEMENTED)
+   - Purpose: Full article content extraction
+   - Technology: BrightData Web Unlocker Direct API
+   - Zone: thehackernews_scraper
+   - Features:
+     * Anti-bot bypass for reliable scraping
+     * Rate limiting (2 seconds between requests)
+     * Concurrent scraping (3 parallel requests)
+     * 60-second timeout per request
+   - Data Extracted:
+     * Full article content
+     * Author information
+     * Categories and tags
+     * Related article links
+
+3. SUPABASE DATABASE (IMPLEMENTED)
+   - PostgreSQL with pgvector extension
+   - Stores: Articles, embeddings, predictions, user preferences
+   - Vector similarity search for article connections
 
 FUTURE SOURCES (Architecture Ready):
-- BrightData web scraping
-- CVE databases (NVD)
-- Threat intelligence feeds
-- Internal incident data
+- CVE databases (NVD API)
+- MITRE ATT&CK framework
+- Threat intelligence feeds (STIX/TAXII)
+- Internal incident data integration
 ```
 
 ### APPENDIX C: Prediction Methodology
@@ -763,6 +836,99 @@ GET /api/articles/{id}/connections
 
 GET /api/articles/{id}/timeline
   - Story evolution timeline
+
+GET /api/articles/{id}/forecast
+  - 48-hour threat forecast
+
+GET /api/dna/{id}
+  - Threat DNA matching analysis
+
+POST /api/infographics/generate
+  - Generate AI infographic for article
+```
+
+### APPENDIX E: Infographic Generation with Google Gemini
+
+**Content**:
+```
+AI-POWERED INFOGRAPHIC GENERATION
+
+TECHNOLOGY STACK:
+- Google Gemini API (gemini-nano-banana-pro-preview)
+- Fallback: gemini-2.5-flash-image
+- Storage: Supabase Storage (infographics bucket)
+
+HOW IT WORKS:
+
+1. CONTENT ANALYSIS
+   - Extract key threat information from article
+   - Identify critical data points, timelines, and relationships
+   - Structure content for visual representation
+
+2. PROMPT ENGINEERING
+   - Dynamic prompt generation based on threat type
+   - Tailored visual styles for different security contexts
+   - Executive-friendly color schemes and layouts
+
+3. IMAGE GENERATION
+   - Gemini NanoBanana generates security-focused infographics
+   - Automatic retry logic (max 3 attempts)
+   - Fallback to alternative model on failure
+
+4. STORAGE & DELIVERY
+   - Images stored in Supabase Storage
+   - Public URLs for embedding
+   - Cached for performance
+
+INFOGRAPHIC TYPES:
+- Threat Timeline: Visual story evolution
+- Attack Flow: Step-by-step attack methodology
+- Impact Assessment: Business impact visualization
+- Comparison Charts: CVE severity comparisons
+- Executive Summaries: Board-ready visuals
+
+CONFIGURATION:
+- Model: models/nano-banana-pro-preview
+- Fallback: models/gemini-2.5-flash-image
+- Max Retries: 3
+- Storage Bucket: infographics
+
+USE CASE:
+"Generate a visual summary of this ransomware attack
+that I can share with the executive team."
+→ AI creates a professional infographic in seconds
+```
+
+### APPENDIX F: Notification System
+
+**Content**:
+```
+REAL-TIME ALERT SYSTEM
+
+TELEGRAM BOT INTEGRATION:
+- Bot Username: @SecurityIntelBot
+- Real-time push notifications
+- Configurable alert thresholds
+- Rich message formatting with threat details
+
+RESEND EMAIL INTEGRATION:
+- From: notifications@securityintel.dev
+- HTML-formatted security alerts
+- Daily/weekly digest options
+- Urgent threat notifications
+
+ALERT TRIGGERS:
+- New high-severity articles (CVSS > 7.0)
+- Prediction confidence > 80%
+- Threat actor activity spikes
+- CVE mentions in multiple articles
+- Story evolution milestones
+
+CUSTOMIZATION:
+- Per-user notification preferences
+- Severity threshold configuration
+- Topic filtering (ransomware, APT, vulnerabilities)
+- Quiet hours scheduling
 ```
 
 ---
@@ -850,22 +1016,27 @@ GET /api/articles/{id}/timeline
 |-------------|----------|--------|
 | 1. Team name | Slide 1, 14, 15 | SheepAI |
 | 2. Solution description (max 300 chars) | Slide 4, below | Ready |
-| 3. Technical solution explanation | Slides 5, 11, Appendix | Ready |
-| 4. Solution completeness overview | Slide 13 (10 features) | Ready |
+| 3. Technical solution explanation | Slides 5, 11, Appendix A-F | Ready |
+| 4. Solution completeness overview | Slide 13 (12 features + infrastructure) | Ready |
 | 5. 1-min demo video URL | Record from demo flow | Needed |
 | 6. PowerPoint slides | This document (17 slides) | Ready |
 | 7. GitHub repository link | Slide 15 | Needed |
 
 ### 300-Character Solution Description
 
-> "AI security intelligence platform with knowledge graphs, predictive analytics, 48-hour threat forecasts, Threat DNA matching, and executive translation. Transforms news into actionable insights with confidence scores. From reactive to predictive."
+> "AI security platform with GPT-4 analysis, BrightData scraping, Supabase/pgvector storage, knowledge graphs, predictive analytics, 48h forecasts, Threat DNA matching, Gemini NanoBanana infographics, and Telegram/email alerts. From reactive to predictive."
 
-(252 characters)
+(258 characters)
 
-**Alternative (Full Features)**:
-> "AI-powered security platform: knowledge graphs reveal hidden connections, predictive analytics forecast threats, Threat DNA matches historical patterns, and one-click translation explains risks to executives."
+**Alternative (Technology Focus)**:
+> "Enterprise security intelligence: BrightData scraping, GPT-4 analysis, Gemini infographics, pgvector embeddings, knowledge graphs, 48-hour threat forecasts, and real-time Telegram alerts. AI that thinks ahead."
 
-(210 characters)
+(213 characters)
+
+**Alternative (Feature Focus)**:
+> "AI-powered security platform: knowledge graphs, predictive analytics, Threat DNA matching, executive translation, AI infographics, and real-time alerts via Telegram. Transforms news into actionable intelligence."
+
+(214 characters)
 
 ---
 
