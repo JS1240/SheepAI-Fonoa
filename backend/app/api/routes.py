@@ -634,7 +634,7 @@ async def generate_infographic(
         related_articles = [article] + [a for a, _ in similar]
         timeline_data = await chat_service._build_timeline(article, related_articles)
         if timeline_data:
-            timeline_events = timeline_data.get("events", [])
+            timeline_events = timeline_data.events if hasattr(timeline_data, 'events') else []
 
     # Generate the infographic
     infographic = await infographic_service.generate_infographic(

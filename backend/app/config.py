@@ -72,8 +72,8 @@ class Settings(BaseSettings):
 
     # Google Gemini Configuration (for infographic generation)
     google_api_key: str = Field(default="")
-    gemini_model: str = Field(default="models/gemini-2.0-flash-exp")
-    gemini_fallback_model: str = Field(default="models/gemini-1.5-flash")
+    gemini_model: str = Field(default="models/nano-banana-pro-preview")
+    gemini_fallback_model: str = Field(default="models/gemini-2.5-flash-image")
     infographic_bucket: str = Field(default="infographics")
     infographic_max_retries: int = Field(default=3)
 
