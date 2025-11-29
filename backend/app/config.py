@@ -31,7 +31,7 @@ class Settings(BaseSettings):
 
     # OpenAI
     openai_api_key: str = Field(default="")
-    openai_model: str = Field(default="gpt-4-turbo-preview")
+    openai_model: str = Field(default="gpt-5-mini")
     embedding_model: str = Field(default="text-embedding-3-small")
 
     # Data Sources
